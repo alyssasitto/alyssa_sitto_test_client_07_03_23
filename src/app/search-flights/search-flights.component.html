@@ -1,0 +1,63 @@
+<section class="search-section">
+  <h2>Search Flights</h2>
+
+  <div class="container">
+    <form class="search-form">
+      <div>
+        <label for="origin">Origin</label>
+        <select name="origin" [(ngModel)]="origin">
+          <option value="miami">Miami</option>
+          <option value="los angeles">Los Angeles</option>
+          <option value="houston">Houston</option>
+          <option value="chicago">Chicago</option>
+          <option value="toronto">Toronto</option>
+          <option value="sydney">Sydney</option>
+          <option value="london">London</option>
+          <option value="amsterdam">Amsterdam</option>
+          <option value="dubai">Dubai</option>
+          <option value="singapore">Singapore</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="destination">Destination</label>
+        <select name="destination" [(ngModel)]="destination">
+          <option value="paris">Paris</option>
+          <option value="tokyo">Tokyo</option>
+          <option value="new-york">New York</option>
+          <option value="sydney">Sydney</option>
+          <option value="london">London</option>
+          <option value="rome">Rome</option>
+          <option value="barcelona">Barcelona</option>
+          <option value="cairo">Cairo</option>
+          <option value="rio de janeiro">Rio de Janeiro</option>
+          <option value="cape town">Cape Town</option>
+          <option value="miami">Miami</option>
+        </select>
+      </div>
+
+      <button (click)="searchFlights()" class="search-btn">Search</button>
+    </form>
+
+    <p *ngIf="error != null">{{ error }}</p>
+
+    <div class="flight-list">
+      <ng-container *ngIf="flights.length > 0 && error == null">
+        <ul *ngFor="let flight of flights">
+          <li>
+            <span> {{ flight.flightNumber }}</span>
+            <span>{{ flight.flightName }}</span>
+            <span>{{ flight.origin }}</span>
+            <span>{{ flight.destination }}</span>
+            <span>{{ flight.seatsAvailable }}</span>
+            <span>{{ flight.fare }}</span>
+            <button class="purple">View Details</button>
+            <button class="green">Book</button>
+          </li>
+        </ul>
+      </ng-container>
+    </div>
+
+    <button routerLink="/home" class="home-btn">Home</button>
+  </div>
+</section>

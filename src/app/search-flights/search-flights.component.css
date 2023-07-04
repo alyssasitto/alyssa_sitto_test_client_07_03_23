@@ -1,0 +1,70 @@
+.search-section {
+  height: 100vh;
+  padding-top: 8rem;
+}
+
+.search-section h2 {
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  margin-bottom: 5rem;
+}
+
+.search-section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-section form {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.search-section form div {
+  display: flex;
+  gap: 1rem;
+}
+
+.flight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+.flight-list li {
+  width: 100%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.flight-list li button {
+  padding: 0 1.5rem;
+  color: white;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.green {
+  background-color: green;
+}
+
+.search-btn {
+  background-color: rgb(102, 176, 102);
+  color: white;
+  padding: 0.2rem 1rem;
+}
+
+.search-section .home-btn {
+  padding: 0.3rem 2rem;
+  background-color: rgb(72, 72, 195);
+  color: white;
+}

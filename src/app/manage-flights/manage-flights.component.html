@@ -1,0 +1,75 @@
+<section class="manage-flights">
+  <h2>Flight List</h2>
+  <div class="container">
+    <form>
+      <div>
+        <label for="flight-num">Flight Number</label>
+        <input type="text" name="flight-num" [(ngModel)]="flightNumber" />
+      </div>
+      <div>
+        <label for="flight-name">Flight Name</label>
+        <input type="text" name="flight-name" [(ngModel)]="flightName" />
+      </div>
+      <div>
+        <label for="origin">Origin</label>
+        <select name="origin" [(ngModel)]="origin">
+          <option value="miami">Miami</option>
+          <option value="los angeles">Los Angeles</option>
+          <option value="houston">Houston</option>
+          <option value="chicago">Chicago</option>
+          <option value="toronto">Toronto</option>
+          <option value="sydney">Sydney</option>
+          <option value="london">London</option>
+          <option value="amsterdam">Amsterdam</option>
+          <option value="dubai">Dubai</option>
+          <option value="singapore">Singapore</option>
+        </select>
+      </div>
+      <div>
+        <label for="destination">Destination</label>
+        <select name="destination" [(ngModel)]="destination">
+          <option value="paris">Paris</option>
+          <option value="tokyo">Tokyo</option>
+          <option value="new york">New York</option>
+          <option value="sydney">Sydney</option>
+          <option value="london">London</option>
+          <option value="rome">Rome</option>
+          <option value="barcelona">Barcelona</option>
+          <option value="cairo">Cairo</option>
+          <option value="rio de janeiro">Rio de Janeiro</option>
+          <option value="cape town">Cape Town</option>
+        </select>
+      </div>
+      <div>
+        <label for="seats">Seats Available</label>
+        <input type="text" name="seats" [(ngModel)]="seatsAvailable" />
+      </div>
+      <div>
+        <label for="fare">Fare</label>
+        <input type="text" name="fare" [(ngModel)]="fare" />
+      </div>
+
+      <button (click)="addFlight()">Add/Update</button>
+    </form>
+
+    <div class="flight-list">
+      <ng-container *ngIf="flights.length > 0">
+        <ul *ngFor="let flight of flights">
+          <li>
+            <span> {{ flight.flightNumber }}</span>
+            <span>{{ flight.flightName }}</span>
+            <span>{{ flight.origin }}</span>
+            <span>{{ flight.destination }}</span>
+            <span>{{ flight.seatsAvailable }}</span>
+            <span>{{ flight.fare }}</span> <button class="blue">Edit</button>
+            <button (click)="deleteFlight(flight.flightNumber)" class="red">
+              Delete
+            </button>
+          </li>
+        </ul>
+      </ng-container>
+
+      <button routerLink="/home" class="home-btn">Home</button>
+    </div>
+  </div>
+</section>
