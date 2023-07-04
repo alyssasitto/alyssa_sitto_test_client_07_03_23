@@ -38,11 +38,9 @@ export class ManageFlightsComponent implements OnInit {
 
   deleteFlight(id?: string) {
     if (id !== undefined) {
-      this.flightService.deleteFlight(id).subscribe((data) => {
-        this.flights = this.flights.filter(
-          (flight) => flight.flightNumber != id
-        );
-      });
+      this.flightService.deleteFlight(id).subscribe((data) => {});
+
+      this.flights = this.flights.filter((flight) => flight.flightNumber != id);
     }
   }
 
