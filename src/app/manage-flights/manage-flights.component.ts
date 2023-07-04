@@ -32,6 +32,7 @@ export class ManageFlightsComponent implements OnInit {
 
     this.flightService.addFlight(newFlight).subscribe((data) => {
       console.log(data);
+      this.flights.push(newFlight);
     });
   }
 

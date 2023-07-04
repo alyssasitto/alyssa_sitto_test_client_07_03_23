@@ -19,7 +19,7 @@ export class FlightService {
   }
 
   addFlight(data: Flight) {
-    return this.http.put(`${baseUrl}/add`, data);
+    return this.http.post(`${baseUrl}/add`, data);
   }
 
   deleteFlight(id: string) {
