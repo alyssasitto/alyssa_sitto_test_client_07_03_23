@@ -14,9 +14,11 @@ export class SearchFlightsComponent implements OnInit {
 
   origin = '';
   destination = '';
-  error?: string;
+  error?: string | null;
 
   searchFlights() {
+    this.error = null;
+
     const searchedFlights = this.flights.filter(
       (flight) =>
         flight.origin?.toLocaleLowerCase() == this.origin &&
